@@ -1,5 +1,5 @@
 [package]
-name = "rage-wrapper"
+name = "encrypt-to-me-rage"
 version = "0.1.0"
 authors = ["Wojciech Geisler <wojciech.geisler@gmail.com>"]
 edition = "2018"
