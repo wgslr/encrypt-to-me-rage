@@ -9,11 +9,7 @@ use wasm_bindgen::prelude::*;
 static ALLOC: wee_alloc::WeeAlloc = wee_alloc::WeeAlloc::INIT;
 
 #[wasm_bindgen]
-extern {
-    fn alert(s: &str);
-}
-
-#[wasm_bindgen]
-pub fn greet() {
-    alert("Hello, rage-wrapper!");
+pub fn encrypt_to_pubkey(plaintext: &str, pubkey: &str) -> String {
+    utils::set_panic_hook();
+    "Hello wasm".to_owned()
 }
