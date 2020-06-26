@@ -1,6 +1,6 @@
 [package]
 name = "encrypt-to-me-rage"
-version = "0.1.0-alpha.2"
+version = "0.1.0-alpha.3"
 authors = ["Wojciech Geisler <wojciech.geisler@gmail.com>"]
 edition = "2018"
 
