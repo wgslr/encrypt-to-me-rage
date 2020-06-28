@@ -4,6 +4,7 @@ use age::keys::RecipientKey;
 use age::Format;
 use std::fmt::Debug;
 use std::io::Write;
+use std::str::FromStr;
 
 use wasm_bindgen::prelude::*;
 
@@ -32,6 +33,14 @@ pub fn encrypt_to_pubkey(plaintext: &str, pubkey: &str) -> Result<String, JsValu
     output.finish().map_err(err_to_js)?;
 
     String::from_utf8(encrypted).or_else(|e| Err(err_to_js(e)))
+}
+
+#[wasm_bindgen]
+pub fn is_key_valid(pubkey: &str) -> bool {
+    match RecipientKey::from_str(pubkey) {
+        Ok(_) => true,
+        Err(_) => false,
+    }
 }
 
 fn err_to_js<T: Debug>(e: T) -> JsValue {
